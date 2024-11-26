@@ -13,6 +13,8 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                poppins: ['poppins-regular'],
+                poppinsbold: ['poppins-bold'],
             },
         },
     },
