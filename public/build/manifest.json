@@ -1,0 +1,17 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-CGtGqXOv.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/fonts/poppins-regular.ttf": {
+    "file": "assets/poppins-regular-CTKNfV9P.ttf",
+    "src": "resources/css/fonts/poppins-regular.ttf"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-BjCBnTiP.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  }
+}
