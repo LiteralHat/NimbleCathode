@@ -28,6 +28,13 @@
         <img src="img/hero.png" class="w-full h-auto">
     </div>
 
+    <div class="h-52 bg-black text-white">
+
+        <h1 class="uppercase">I make everything.</h1>
+
+
+    </div>
+
 
 
 
