@@ -3,11 +3,141 @@ layout: base.njk
 title: Welcome Home.
 ---
 
-<div id="heroimage">
-    <img src="img/2.png" class="w-screen h-[1200px] object-cover">
+<div id="heroimage" class="h-[1300px] bg-transparent">
 </div>
+
+
+<div class="parallax-container w-screen h-[1200px]">
+    <div class="parallax-layer layer-0" data-parallax-speed="0.05" data-max-scroll="1300"></div>
+    <div class="parallax-layer layer-2" data-parallax-speed="0.6" data-max-scroll="1300"></div>
+    <div class="parallax-layer layer-4" data-parallax-speed="0.9" data-max-scroll="1300"></div>
+    <div class="parallax-layer layer-5" data-parallax-speed="1.4" data-max-scroll="1300"></div>
+</div>
+
 
 <div class="bg-black border-t-2 border-white text-white px-2   object-cover">
     <h1 class="font-bebas uppercase text-[clamp(0px,10vw,200px)] text-nowrap text-center">I make
         everything.</h1>
 </div>
+
+
+<div id="heroimage" class="w-screen bg-black h-[1200px]">
+</div>
+
+
+
+<style>
+    .parallax-container {
+        position: fixed;
+        overflow: visible;
+        z-index: -1;
+    }
+
+    .parallax-layer {
+        width: 100vw;
+        height: 2000px;
+        position: fixed;
+        left: 0;
+        top: 0;
+        background-position: center center;
+        background-repeat: no-repeat;
+
+    }
+
+
+    .layer-0 {
+        top: 20px;
+        z-index: 10;
+        background-image: url('/img/everything/bg.png');
+    }
+
+    .layer-2 {
+        top: -300px;
+        z-index: 15;
+        background-image: url('/img/everything/lowmid.png');
+    }
+
+    .layer-4 {
+        top: -200px;
+        z-index: 20;
+        background-image: url('/img/everything/mid.png');
+    }
+
+    .layer-5 {
+        top: 98px;
+        z-index: 25;
+        background-image: url('/img/everything/top.png');
+    }
+</style>
+
+
+<script>
+
+
+    var ParallaxManager, ParallaxPart;
+
+    ParallaxPart = (function () {
+        function ParallaxPart(el) {
+            this.el = el;
+            this.speed = parseFloat(this.el.getAttribute('data-parallax-speed'));
+            this.maxScroll = parseInt(this.el.getAttribute('data-max-scroll'));
+        }
+
+        ParallaxPart.prototype.update = function (scrollY) {
+            if (scrollY > this.maxScroll) { return; }
+            var offset = -(scrollY * this.speed);
+            this.setYTransform(offset);
+        };
+
+        ParallaxPart.prototype.setYTransform = function (val) {
+            this.el.style.webkitTransform = "translate3d(0, " + val + "px, 0)";
+            this.el.style.MozTransform = "translate3d(0, " + val + "px, 0)";
+            this.el.style.OTransform = "translate3d(0, " + val + "px, 0)";
+            this.el.style.transform = "translate3d(0, " + val + "px, 0)";
+            this.el.style.msTransform = "translateY(" + val + "px)";
+        };
+
+        return ParallaxPart;
+
+    })();
+
+    ParallaxManager = (function () {
+        ParallaxManager.prototype.parts = [];
+
+        function ParallaxManager(elements) {
+            if (Array.isArray(elements) && elements.length) {
+                this.elements = elements;
+            }
+            if (typeof elements === 'object' && elements.item) {
+                this.elements = Array.prototype.slice.call(elements);
+            } else if (typeof elements === 'string') {
+                this.elements = document.querySelectorAll(elements);
+                if (this.elements.length === 0) {
+                    throw new Error("Parallax: No elements found");
+                }
+                this.elements = Array.prototype.slice.call(this.elements);
+            } else {
+                throw new Error("Parallax: Element variable is not a querySelector string, Array, or NodeList");
+            }
+            for (var i in this.elements) {
+                this.parts.push(new ParallaxPart(this.elements[i]));
+            }
+            window.addEventListener("scroll", this.onScroll.bind(this));
+        }
+
+        ParallaxManager.prototype.onScroll = function () {
+            window.requestAnimationFrame(this.scrollHandler.bind(this));
+        };
+
+        ParallaxManager.prototype.scrollHandler = function () {
+            var scrollY = Math.max(window.pageYOffset, 0);
+            for (var i in this.parts) { this.parts[i].update(scrollY); }
+        };
+
+        return ParallaxManager;
+
+    })();
+
+    new ParallaxManager('.parallax-layer');
+
+</script>
