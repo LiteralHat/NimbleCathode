@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "eleventy --serve",
-    "build": "eleventy",
-    "build:css": "npx postcss src/styles.css -o public/styles.css",
-    "dev": "npm run build:css && eleventy --serve"
+    "dev": "npm run build-css && eleventy --serve",
+    "build-css": "npx tailwindcss -i src/styles.css -o public/styles.css",
+    "build": "npm run build-css && eleventy"
   },
   "keywords": [],
   "author": "",
