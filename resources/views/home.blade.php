@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="overscroll-x-none">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -8,26 +8,24 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-
 <body>
+    <div class="bg-black h-20 border-white border-1 flex items-center justify-between px-72">
+        <img src="img/logo-white.png" class="h-10 w-auto">
 
-
-    <div class="flex items-center justify-center h-screen m-0 p-0">
-        <div class="flex flex-col justify-center w-[600px] h-screen p-10">
-            <img src="/img/logo.png" class="my-24 w-3/5 h-auto">
-            <ul class="font-poppins space-y-6 text-2xl pl-6">
-                <li>About</li>
-                <li>Commission</li>
-                <li>Portfolio</li>
-                <li>Website Design</li>
-                <li>Services</li>
+        <nav>
+            <ul class="text-white font-poppins flex text-xl uppercase">
+                <li class="border-r-2 h-20 w-48 py-6 border-white text-center"><a href="#portfolio">Portfolio</a></li>
+                <li class="border-r-2 h-20 w-48 py-6 border-white text-center"><a href="#commissions">Commission</a>
+                </li>
+                <li class="border-r-2 h-20 w-48 py-6 border-white text-center"><a href="#store">Store</a></li>
+                <li class="border-r-2 h-20 w-48 py-6 border-white text-center"><a href="#websites">Websites</a></li>
+                <li class="border-r-2 h-20 w-48 py-6 border-white text-center"><a href="#design">Design</a></li>
             </ul>
-        </div>
-
-        <div>
-            <img src="/img/pagedolls/guy.png" class="h-auto w-[600px] mt-96 ">
-        </div>
+        </nav>
     </div>
+
+
+
 
 
 </body>
