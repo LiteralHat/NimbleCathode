@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div class="bg-black h-20 border-white border-1 flex items-center justify-between px-72">
+    <div class="bg-black h-20 border-white border-b-2 flex items-center justify-between px-72">
         <img src="img/logo-white.png" class="h-10 w-auto">
 
         <nav>
@@ -22,6 +22,10 @@
                 <li class="border-r-2 h-20 w-48 py-6 border-white text-center"><a href="#design">Design</a></li>
             </ul>
         </nav>
+    </div>
+
+    <div id="heroimage">
+        <img src="img/hero.png" class="w-full h-auto">
     </div>
 
 
