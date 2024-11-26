@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: "poppins-regular";
+    font-family: "poppins";
     src: url('fonts/poppins-regular.ttf') 
+}
+
+@font-face {
+    font-family: "bebas";
+    src: url('fonts/bebas-neue.ttf') 
 }

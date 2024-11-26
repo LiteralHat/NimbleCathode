@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "npm run build-css && eleventy --serve",
-    "build-css": "npx tailwindcss -i src/styles.css -o public/styles.css",
+    "build-css": "npx tailwindcss -i src/styles.css -o _site/styles.css",
     "build": "npm run build-css && eleventy"
   },
   "keywords": [],
