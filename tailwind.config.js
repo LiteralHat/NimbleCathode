@@ -12,7 +12,7 @@ module.exports = {
         poppins: ['poppins'],
       },
       animation: {
-        'fade-in': 'fadeIn 2s ease-out',
+        'fade-in': 'fadeIn 2s ease-in-out',
       },
       keyframes: {
         fadeIn: {
