@@ -22,7 +22,7 @@ module.exports = {
             filter: 'blur(5px)'
 
           },
-          '10%': {
+          '5%': {
             opacity: '0',
             transform: 'scale(1.1)',
             filter: 'blur(5px)'
