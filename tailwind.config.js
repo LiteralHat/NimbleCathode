@@ -7,29 +7,46 @@ module.exports = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        '3xl': '0 0 15px 0 black'
+      },
       fontFamily: {
         bebas: ['bebas'],
         poppins: ['poppins'],
       },
       animation: {
-        'fade-in': 'fadeIn 2s ease-in-out',
+        'fade-in': 'fadeIn 1s ease-in-out',
+        'scale-in': 'scaleIn 2s ease-in-out',
       },
       keyframes: {
         fadeIn: {
           '0%': {
-            opacity: '0',
+            opacity: '0'
+
+          },
+          '5%': {
+            opacity: '0'
+
+          },
+          '100%': {
+            opacity: '1'
+          },
+        },
+        scaleIn: {
+          '0%': {
             transform: 'scale(1)',
+            opacity: '0',
             filter: 'blur(5px)'
 
           },
           '5%': {
-            opacity: '0',
             transform: 'scale(1.1)',
+            opacity: '0',
             filter: 'blur(5px)'
           },
           '100%': {
-            opacity: '1',
             transform: 'scale(1)',
+            opacity: '1',
             filter: 'blur(0px)'
           },
         },
